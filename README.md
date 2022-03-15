@@ -13,3 +13,4 @@ Para iniciar, es necesario que todos tengan el proyecto a nivel local.
 - Hacer un Pull Request a la rama principal MASTER.
 
 ## Participantes de la cursada
+Julian Perini
