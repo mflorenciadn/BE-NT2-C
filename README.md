@@ -1,6 +1,6 @@
 ## Repositorio inicial de la clase | Programación en Nuevas Tecnologías 2
 
-¡Bienvenidos al mágico mundo de GitHub! 
+¡Bienvenidos al mágico mundo de GitHub!
 
 En este repositorio estará todo el contenido práctico que trabajaremos semana a semana.
 
@@ -14,3 +14,4 @@ Para iniciar, es necesario que todos tengan el proyecto a nivel local.
 
 ## Participantes de la cursada
 Víctor Lacco
+Joaquin Charovsky JCH99
