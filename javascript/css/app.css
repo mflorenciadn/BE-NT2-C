@@ -1,0 +1,32 @@
+
+html {
+    box-sizing: border-box;
+   font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    background-color: #E0E0E0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+header {
+    padding: 3rem 0;
+}
+
+header h1 {
+    text-align: center;
+    color: #4B989A;
+    font-size: 6rem;
+}
+header p {
+    color: #255D68;
+    text-align: center;
+    font-size: 2.5rem;
+}
+header p a {
+    text-decoration: none;
+    color: #4B989A;
+}
