@@ -1,0 +1,27 @@
+button {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background-color: #4B989A;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #FAFAFA;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 80%;
+    box-shadow: 5px 0 15px #999;
+    margin-bottom: 5%;
+}
+
+button:hover:enabled{
+    opacity: 0.8;
+}
+
+button:disabled {
+    cursor:default;
+    background-color: #999;
+    box-shadow: none;
+}

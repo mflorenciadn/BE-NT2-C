@@ -1,0 +1,18 @@
+.CupcakesList-Container {
+    margin: -30vh 5% 10vh 5%;
+}
+
+.CupcakesList-Title {
+    font-family: monospace;
+    color: #255D68;
+    text-shadow: 0 0 0.2em #eceaea, 0 0 0.2em #eceaea,
+        0 0 0.2em #eceaea;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.CupcakesList-Grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}

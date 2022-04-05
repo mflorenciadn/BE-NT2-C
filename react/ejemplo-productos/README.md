@@ -9,7 +9,6 @@ En esta clase seguiremos abordando los conceptos fundamentales de _React_.
 ## 🧠 Contenido de la clase:
   - Componentes y propiedades
   - Estado y ciclo de vida
-  - Manejo de eventos
   - Estilos con CSS
   - Renderizado condicional
   - Listas y keys

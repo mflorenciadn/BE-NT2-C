@@ -1,0 +1,42 @@
+.Banner {
+    min-height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #00000059, rgb(226, 225, 225)), url("../../assets/images/cupcakes.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin-left: 5%;
+    max-width: fit-content;
+    align-items: flex-start;
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 2px solid;
+    border-right-color: #e2e1e1;
+    width: 12ch;
+    color: #255D68;
+    text-shadow: 0 0 0.2em #eceaea, 0 0 0.2em #eceaea,
+        0 0 0.2em #eceaea;
+    font-size: 4.5em;
+    font-weight: 500;
+    margin-top: 0px;
+    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

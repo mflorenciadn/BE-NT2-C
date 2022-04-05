@@ -1,0 +1,38 @@
+.Card {
+    padding: 5%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 4px 4px 8px 0px #999;
+    background-color: #FFFF;
+}
+
+.Card-Content > h4 {
+    margin: 5% 0 0 0;
+    font-size: 1.25rem;
+    color: #474747;
+    letter-spacing: 0.05em;
+}
+
+.Card-Content > h6 {
+    color: #8d8d8d;
+    line-height: 1.5em;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top:1em;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.Card-Content > p {
+    line-height: 1.25em;
+    font-size: 1.25rem;
+    color: #474747;
+    font-family: monospace;
+    font-weight: 500;
+ }
+
+.Card > img  {
+    max-width: 100%;
+}
