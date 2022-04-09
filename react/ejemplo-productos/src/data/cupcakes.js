@@ -23,7 +23,7 @@ const cupcakes = [
     title: "Chocolate",
     category: "classic",
     description:
-      "Esponjosa torta de chocolate hecha con cocoa Hersheys, cubierto con una suave crema de chocolate.",
+      "Esponjosa torta de chocolate hecha con cocoa Hersheys, cubierto con crema de chocolate.",
     id: 3,
     image: require("../assets/images/flavors/chocolate.png"),
     price: 150,
@@ -43,7 +43,7 @@ const cupcakes = [
     title: "Frambuesa",
     category: "premium",
     description:
-      "Completamente libre de gluten, el principal rol en la masa lo juega la harina de almendras. Un snack saludable que puedes utilizar como colación, para antes de ir al gym o para un postrecito delicioso.",
+      "Completamente libre de gluten, el principal rol en la masa lo juega la harina de almendras.",
     id: 5,
     image: require("../assets/images/flavors/frambuesa.png"),
     price: 100,

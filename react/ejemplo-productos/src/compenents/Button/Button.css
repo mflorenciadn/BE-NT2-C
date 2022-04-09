@@ -1,4 +1,4 @@
-button {
+.Button {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     background-color: #4B989A;
@@ -11,16 +11,15 @@ button {
     justify-content: center;
     align-items: center;
     padding: 1em;
-    width: 80%;
+    width: 100%;
     box-shadow: 5px 0 15px #999;
-    margin-bottom: 5%;
 }
 
-button:hover:enabled{
-    opacity: 0.8;
+.Button:hover:enabled{
+    background-color: #4DB6AC;
 }
 
-button:disabled {
+.Button:disabled {
     cursor:default;
     background-color: #999;
     box-shadow: none;

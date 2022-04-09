@@ -2,6 +2,13 @@
     margin: -30vh 5% 10vh 5%;
 }
 
+.CupcakesList-Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .CupcakesList-Title {
     font-family: monospace;
     color: #255D68;
