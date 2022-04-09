@@ -1,5 +1,5 @@
 import React from "react";
-import CupcakeCard from "../Cupcake/CupcakeCard";
+import CupcakeCard from "../CupcakeCard/CupcakeCard";
 import "./CupcakesList.css";
 
 const CupcakesList = ({ products }) => (
