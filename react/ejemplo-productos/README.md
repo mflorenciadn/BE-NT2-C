@@ -57,7 +57,7 @@ Además, cuando la descripción del producto se encuentre expandida, se deberá 
 
 ## 🔧 Instrucciones
 
-Si todavía no tenés el repositorio clonado, ¡ya es momento de hacerlo!
+**Si todavía no tenés el repositorio clonado**, ¡ya es momento de hacerlo!
 
 ```bash
 git clone https://github.com/mflorenciadn/BE-NT2-C
@@ -75,13 +75,45 @@ Hacé un checkout hacia la rama de esta clase
 git checkout clase5/hooks
 ```
 
-Si ya tenías el repositorio clonado
+<br />
+<br />
+
+**Si ya tenías el repositorio clonado**:
 
 ```bash
 git pull origin clase5/hooks
 ```
 
+<br />
+<br />
+
+**Una vez que te encuentres en la rama **clase5/hooks****, entrá en el directorio donde se encuentra este ejercicio:
+
+```bash
+cd react
+```
+
+```bash
+cd ejemplo-productos
+```
+
 <br/>
+<br/>
+
+Instalá las dependencias
+
+```bash
+npm i
+```
+
+<br/>
+<br/>
+
+Ejecutá el programa
+
+```bash
+npm start
+```
 
 ---
 
