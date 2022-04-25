@@ -1,14 +1,13 @@
 import * as React from "react";
 import Card from "../Card/Card";
 
-export default function CupcakeCard({ cupcake }) {
+export default function CupcakeCard({ cupcake, handleAddCart }) {
   const withoutStock = cupcake.stock === 0;
 
   const handleClick = () => {
-    alert("Coming soon..");
+    handleAddCart(cupcake.id);
   };
 
-  console.log(cupcake.image);
   return (
     <Card
       image={cupcake.image}

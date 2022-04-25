@@ -16,20 +16,6 @@
     letter-spacing: 0.05em;
 }
 
-.Card-Content > h6 {
-    color: #8d8d8d;
-    line-height: 1.5em;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-top:1em;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    width: 90%;
-}
-
 .Card-Content > p {
     line-height: 1.25em;
     font-size: 1.25rem;
@@ -42,7 +28,6 @@
     max-width: 100%;
 }
 
-/* 
 .Card-Text-Container {
     display: flex;
     flex-direction: row;
@@ -106,4 +91,4 @@
 
 .Card-Button-Open-Modal:hover {
     text-decoration: underline;
-} */
+}
