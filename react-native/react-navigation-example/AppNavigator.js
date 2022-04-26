@@ -29,7 +29,7 @@ export default function AppNavigator() {
         }}
       />
       <Tab.Screen
-        name="ProfileTab"
+        name="ProfileStack"
         component={ProfileNavigator}
         options={{
           headerShown: false,
@@ -40,7 +40,7 @@ export default function AppNavigator() {
         }}
       />
       <Tab.Screen
-        name="NotificationsStack"
+        name="Notifications"
         component={NotificationsScreen}
         options={{
           headerShown: false,
