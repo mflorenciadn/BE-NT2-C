@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mi-aplicacion",
-    "slug": "mi-aplicacion",
+    "name": "react-navigation-example",
+    "slug": "react-navigation-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
