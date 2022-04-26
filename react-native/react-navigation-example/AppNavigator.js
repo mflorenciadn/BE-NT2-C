@@ -18,7 +18,7 @@ export default function AppNavigator() {
       initialRouteName="Home"
     >
       <Tab.Screen
-        name="HomeTab"
+        name="HomeStack"
         component={HomeNavigator}
         options={{
           tabBarLabel: "Inicio",
@@ -40,7 +40,7 @@ export default function AppNavigator() {
         }}
       />
       <Tab.Screen
-        name="NotificationsTab"
+        name="NotificationsStack"
         component={NotificationsScreen}
         options={{
           headerShown: false,

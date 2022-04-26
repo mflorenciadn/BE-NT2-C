@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function ProfileScreen({ navigation }) {
   const goHome = () => {
-    navigation.navigate("HomeTab", { screen: "Home" });
+    navigation.navigate("HomeStack", { screen: "Home" });
   };
 
   return (
