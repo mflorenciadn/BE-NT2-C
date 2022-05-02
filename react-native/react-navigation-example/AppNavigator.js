@@ -15,7 +15,6 @@ export default function AppNavigator() {
         tabBarActiveTintColor: "teal",
         tabBarInactiveTintColor: "grey",
       }}
-      initialRouteName="Home"
     >
       <Tab.Screen
         name="HomeStack"

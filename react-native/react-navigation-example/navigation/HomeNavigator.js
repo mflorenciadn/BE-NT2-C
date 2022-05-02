@@ -1,23 +1,18 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "../screens/HomeScreen";
 import DetailsScreen from "../screens/DetailsScreen";
+import DrawerNavigator from "./DrawerNavigator";
 
 const Stack = createNativeStackNavigator();
 
 export default function HomeNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Drawer">
       <Stack.Screen
-        name="Home"
-        component={HomeScreen}
+        name="Drawer"
+        component={DrawerNavigator}
         options={{
-          title: "Te damos la bienvenida",
-          headerTintColor: "white",
-          headerStyle: {
-            backgroundColor: "teal",
-          },
-          headerTitleAlign: "center",
+          headerShown: false,
         }}
       />
       <Stack.Screen
