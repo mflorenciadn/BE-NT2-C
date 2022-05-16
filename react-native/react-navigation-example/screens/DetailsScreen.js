@@ -1,11 +1,30 @@
-import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { StyleSheet, Text, View, Button, FlatList } from "react-native";
+import { getPokemons } from "../services/pokemons";
 
 export default function DetailsScreen({ navigation }) {
+  const [pokemons, setPokemons] = useState([]);
+
+  useEffect(async () => {
+    const list = await fetchPokemons();
+    setPokemons(list);
+  }, []);
+
+  const fetchPokemons = async () => {
+    const response = await getPokemons();
+
+    const data = response.results;
+    const pokemonList = [];
+
+    data.map((item) => pokemonList.push(item));
+
+    return pokemonList;
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sobre Nosotros</Text>
-      <Text style={styles.description}>
+      <Text style={styles.title}>Pokemones</Text>
+      {/* <Text style={styles.description}>
         Voluptate ipsum consequat ea eiusmod. Commodo labore qui minim ullamco
         dolore veniam cillum nostrud. Commodo ad excepteur ut id nisi duis
         eiusmod. In pariatur minim ea aliquip Lorem minim est aliquip eiusmod
@@ -13,6 +32,16 @@ export default function DetailsScreen({ navigation }) {
         in excepteur nulla sunt. Sit qui cillum laboris laborum non ad laboris
         Lorem commodo enim et id. Et enim velit quis labore nisi esse.
       </Text>
+      <View style={styles.buttonContainer}> */}
+      <FlatList
+        styles={styles.listContainer}
+        data={pokemons}
+        renderItem={(pokemon) => (
+          <Text style={styles.listItem}>{pokemon.item.name}</Text>
+        )}
+        keyExtractor={(item) => pokemons.indexOf(item)}
+        numColumns={2}
+      />
       <View style={styles.buttonContainer}>
         <Button
           title="Volver al inicio"
@@ -27,11 +56,14 @@ export default function DetailsScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    marginHorizontal: "10%",
+    marginHorizontal: 20,
+  },
+  listContainer: {
+    paddingHorizontal: 5,
+    paddingVertical: 10,
   },
   title: {
+    textAlign: "center",
     fontWeight: "bold",
     fontSize: 25,
     color: "teal",
@@ -42,7 +74,12 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   buttonContainer: {
-    marginTop: "20%",
-    width: "90%",
+    margin: "5%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  listItem: {
+    width: "50%",
+    padding: 20,
   },
 });
