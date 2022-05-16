@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Image,
-} from "react-native";
+import { StyleSheet, Text, View, Button, Image } from "react-native";
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ route, navigation }) {
   const goToDetails = () => {
     navigation.navigate("Details");
   };
@@ -19,7 +13,7 @@ export default function HomeScreen({ navigation }) {
         style={styles.image}
         resizeMode="contain"
       />
-      <Text style={styles.title}>Aplicación NT2</Text>
+      <Text style={styles.title}>Hola {route.params?.name} 👋</Text>
       <Text style={styles.description}>
         Esta es la aplicación de prueba del curso C
       </Text>
@@ -41,7 +35,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 25,
     color: "teal",
-    padding: 20,
+    padding: 10,
   },
   description: {
     fontSize: 18,
