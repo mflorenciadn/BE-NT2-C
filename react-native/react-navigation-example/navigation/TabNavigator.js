@@ -1,14 +1,14 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeNavigator from "./navigation/HomeNavigator";
-import ProfileNavigator from "./navigation/ProfileNavigator";
+import HomeNavigator from "./HomeNavigator";
+import ProfileNavigator from "./ProfileNavigator";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import NotificationsScreen from "./screens/NotificationsScreen";
+import NotificationsScreen from "../screens/NotificationsScreen";
 
 const Tab = createBottomTabNavigator();
 
-export default function AppNavigator() {
+export default function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -17,7 +17,7 @@ export default function AppNavigator() {
       }}
     >
       <Tab.Screen
-        name="HomeStack"
+        name="HomeNavigator"
         component={HomeNavigator}
         options={{
           tabBarLabel: "Inicio",

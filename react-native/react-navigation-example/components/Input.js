@@ -21,11 +21,12 @@ export default function Input(props) {
         onBlur={() => setInputStyle(styles.inputContainerBlur)}
         keyboardType={keyboardType}
         blurOnSubmit={false}
-        secureTextEntry={passwordVisibility}
+        secureTextEntry={isPassword ? passwordVisibility : false}
+        returnKeyType="done"
       />
       {isPassword && (
         <Pressable onPress={handlePasswordVisibility}>
-          <MaterialCommunityIcons name={rightIcon} size={22} color="#232323" />
+          <MaterialCommunityIcons name={rightIcon} size={22} color="#fdfdfd" />
         </Pressable>
       )}
     </View>
@@ -38,17 +39,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "gray",
+    borderColor: "#fdfdfd2d",
     marginVertical: 20,
+    backgroundColor: "#fdfdfd3d",
   },
   inputContainerFocus: {
-    backgroundColor: "white",
+    backgroundColor: "#fdfdfd3d",
     width: "100%",
     borderRadius: 10,
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 2,
-    borderColor: "teal",
+    borderColor: "white",
     marginVertical: 20,
     shadowColor: "#404040",
     shadowOffset: { width: 0, height: 0 },
@@ -60,5 +62,6 @@ const styles = StyleSheet.create({
     padding: 14,
     fontSize: 20,
     width: "90%",
+    color: "white",
   },
 });

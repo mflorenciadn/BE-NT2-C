@@ -1,7 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
+import { useAuth } from "../context/AuthContext";
 
-export default function HomeScreen({ route, navigation }) {
+export default function HomeScreen({ navigation }) {
+  const { user } = useAuth();
   const goToDetails = () => {
     navigation.navigate("Details");
   };
@@ -13,7 +15,7 @@ export default function HomeScreen({ route, navigation }) {
         style={styles.image}
         resizeMode="contain"
       />
-      <Text style={styles.title}>Hola {route.params?.name} 👋</Text>
+      <Text style={styles.title}>Hola {user.name} 👋</Text>
       <Text style={styles.description}>
         Esta es la aplicación de prueba del curso C
       </Text>

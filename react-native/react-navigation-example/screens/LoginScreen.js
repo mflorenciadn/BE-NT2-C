@@ -1,40 +1,33 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Alert } from "react-native";
+import { StyleSheet, View, Text, Alert, ActivityIndicator } from "react-native";
 import { Button } from "../components/Button";
 import Input from "../components/Input";
+import { useAuth } from "../context/AuthContext";
 
-export function LoginForm({ navigation }) {
+export function LoginForm({ setIsLoading }) {
+  const { Login, user } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const correctUser = {
-    email: "test@test.com",
-    password: "admin",
-    name: "Florencia",
-  };
 
   const isIncompleteData = !email || !password;
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (isIncompleteData) {
       Alert.alert("Acceso inválido", "Todos los campos son obligatorios");
       return;
     }
 
     try {
-      if (email === correctUser.email && password === correctUser.password) {
-        Alert.alert("¡Te damos la bienvenida!");
-        navigation.navigate("Drawer", {
-          screen: "HomeScreen",
-          params: { name: correctUser.name },
-        });
-      } else {
-        Alert.alert(
-          "Acceso inválido",
-          "Correo electrónico y/o contraseña incorrecta"
-        );
-      }
+      setIsLoading(true);
+
+      await Login(email, password);
     } catch (err) {
-      console.log(err);
+      Alert.alert(
+        "Acceso inválido",
+        "Correo electrónico y/o contraseña incorrecta"
+      );
+      setIsLoading(false);
+
       return;
     }
   };
@@ -57,18 +50,27 @@ export function LoginForm({ navigation }) {
         onPress={onSubmit}
         title="Iniciar sesión"
         disabled={isIncompleteData}
+        inverted
       />
     </View>
   );
 }
 
-export default function LoginScreen({ navigation }) {
+export default function LoginScreen() {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <View style={styles.container}>
-      <View style={styles.formView}>
-        <Text style={styles.title}>Login</Text>
-        <LoginForm navigation={navigation} />
-      </View>
+      {isLoading ? (
+        <View style={{ flex: 1, justifyContent: "center" }}>
+          <ActivityIndicator size="large" color="white" />
+        </View>
+      ) : (
+        <View style={styles.formView}>
+          <Text style={styles.title}>Iniciar sesión</Text>
+          <LoginForm setIsLoading={setIsLoading} />
+        </View>
+      )}
     </View>
   );
 }
@@ -76,9 +78,9 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fdfdfd",
-    justifyContent: "center",
+    backgroundColor: "teal",
     alignItems: "center",
+    paddingTop: "10%",
     paddingHorizontal: "10%",
   },
   formView: {
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     alignContent: "center",
     textAlign: "center",
-    color: "teal",
+    color: "white",
     margin: 30,
   },
 });

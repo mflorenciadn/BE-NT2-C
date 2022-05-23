@@ -1,19 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
+import { useAuth } from "../context/AuthContext";
 
 export default function ProfileScreen({ navigation }) {
+  const { user } = useAuth();
   const goHome = () => {
-    navigation.navigate("HomeStack", { screen: "Home" });
+    navigation.navigate("DrawerNavigator", { screen: "HomeNavigator" });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Comenzá a utilizar la aplicación</Text>
-      <Button
-        title="Iniciar sesión"
-        onPress={() => navigation.navigate("Login")}
-        color="teal"
-      />
+      <Text style={styles.title}>Nombre: {user.name}</Text>
+      <Text style={styles.title}>Email: {user.email}</Text>
       <Button title="Ir al inicio" onPress={goHome} color="teal" />
     </View>
   );

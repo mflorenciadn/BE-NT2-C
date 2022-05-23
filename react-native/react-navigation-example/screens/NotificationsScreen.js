@@ -3,13 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
   TouchableOpacity,
   FlatList,
 } from "react-native";
 import notifications from "../services/notifications";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
 
 //////////////////
 // Con FlatList //
@@ -19,7 +17,7 @@ const NotificationItem = ({
   backgroundColor,
   textColor,
   iconColor,
-  onPress
+  onPress,
 }) => {
   return (
     <TouchableOpacity
@@ -31,17 +29,19 @@ const NotificationItem = ({
         name="account-multiple-plus"
         color={iconColor}
       />
-      <Text style={[styles.notificationText, textColor]}>{notification.message}</Text>
+      <Text style={[styles.notificationText, textColor]}>
+        {notification.message}
+      </Text>
     </TouchableOpacity>
   );
 };
-
 
 export default function NotificationsScreen() {
   const [selectedItemId, setSelectedItemId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedItemId ? "#009b97" : "transparent";
+    const backgroundColor =
+      item.id === selectedItemId ? "#009b97" : "transparent";
     const color = item.id === selectedItemId ? "white" : "black";
     const iconColor = item.id === selectedItemId ? "#fdfdfd" : "#009b97";
     return (
@@ -62,15 +62,12 @@ export default function NotificationsScreen() {
         style={styles.notificationsList}
         data={notifications}
         renderItem={renderItem}
-        keyExtractor={( item ) => notifications.indexOf(item) }
+        keyExtractor={(item) => notifications.indexOf(item)}
         ItemSeparatorComponent={
-          Platform.OS !== 'android' &&
+          Platform.OS !== "android" &&
           (({ highlighted }) => (
             <View
-              style={[
-                styles.separator,
-                highlighted && { marginLeft: 0 }
-              ]}
+              style={[styles.separator, highlighted && { marginLeft: 0 }]}
             />
           ))
         }
@@ -78,7 +75,6 @@ export default function NotificationsScreen() {
     </View>
   );
 }
-
 
 ////////////////////
 // Con ScrollView //

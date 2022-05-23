@@ -7,9 +7,9 @@ const Stack = createNativeStackNavigator();
 
 export default function HomeNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Drawer">
+    <Stack.Navigator initialRouteName="DrawerNavigator">
       <Stack.Screen
-        name="Drawer"
+        name="DrawerNavigator"
         component={DrawerNavigator}
         options={{
           headerShown: false,
