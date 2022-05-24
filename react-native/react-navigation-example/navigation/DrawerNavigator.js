@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
-  DrawerContent,
   DrawerItem,
 } from "@react-navigation/drawer";
 import ContactScreen from "../screens/ContactScreen";
 import HomeScreen from "../screens/HomeScreen";
-import { useAuth } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
-  const { Logout } = useAuth();
+  const { signOut } = useContext(AuthContext);
+
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -31,7 +31,7 @@ export default function DrawerNavigator() {
           <DrawerItemList {...props} />
           <DrawerItem
             label="Cerrar Sesión"
-            onPress={async () => await Logout()}
+            onPress={async () => await signOut()}
             itemStyle={{
               marginVertical: 5,
               marginHorizontal: 8,

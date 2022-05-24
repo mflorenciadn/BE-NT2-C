@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
-import { useAuth } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function HomeScreen({ navigation }) {
-  const { user } = useAuth();
+  const { user } = useContext(AuthContext);
+
   const goToDetails = () => {
     navigation.navigate("Details");
   };

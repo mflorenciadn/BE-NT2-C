@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./TabNavigator";
 import LoginScreen from "../screens/LoginScreen";
-import { useAuth } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 const Stack = createNativeStackNavigator();
 
 export default function MainNavigator() {
-  const { isSigned } = useAuth();
+  const { isSigned } = useContext(AuthContext);
 
   return (
     <Stack.Navigator

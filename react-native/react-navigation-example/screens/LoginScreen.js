@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { StyleSheet, View, Text, Alert, ActivityIndicator } from "react-native";
 import { Button } from "../components/Button";
 import Input from "../components/Input";
-import { useAuth } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
+//Para loguearse de manera exitosa usar email = test@gmail.com, password = 1234
 export function LoginForm({ setIsLoading }) {
-  const { Login, user } = useAuth();
+  const { signIn } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,8 +20,7 @@ export function LoginForm({ setIsLoading }) {
 
     try {
       setIsLoading(true);
-
-      await Login(email, password);
+      await signIn(email, password);
     } catch (err) {
       Alert.alert(
         "Acceso inválido",

@@ -16,6 +16,7 @@ export default function AuthNavigator() {
           headerTransparent: true,
         }}
       />
+      {/* Acá podría haber otro Stack.Screen para una pantalla de registro */}
     </Stack.Navigator>
   );
 }

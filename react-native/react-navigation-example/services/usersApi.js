@@ -4,7 +4,7 @@ export function validateUser(email, password) {
   return email === "test@gmail.com" && password === "1234";
 }
 
-//Método que envía datos del usuario para verificar desde el backend si existe y asignarle un token -> POST
+// Método que envía datos del usuario para verificar desde el backend si existe y asignarle un token -> POST
 // Estructura esperada del response:
 // data: {
 //   user: {
